@@ -1,0 +1,30 @@
+# Normalize text files to LF in the repo and in working copies on every OS
+# (firmware sources, Python, shell scripts and docs behave the same everywhere).
+* text=auto eol=lf
+
+# Windows-only scripts keep CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.bin binary
+*.elf binary
+*.onnx binary
+*.pt binary
+*.npz binary
+
+# CAD / 3D printing
+*.stl binary
+*.3mf binary
+*.f3d binary
+*.FCStd binary
+# STEP is text, but huge and machine-generated: no diffs or merges
+*.step -diff -merge
+*.stp -diff -merge
